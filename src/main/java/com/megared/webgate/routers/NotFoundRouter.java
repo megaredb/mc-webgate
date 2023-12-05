@@ -1,4 +1,4 @@
-package com.megared.webgate.routes;
+package com.megared.webgate.routers;
 
 import rawhttp.core.RawHttp;
 import rawhttp.core.RawHttpRequest;

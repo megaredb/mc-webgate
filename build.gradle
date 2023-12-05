@@ -15,10 +15,20 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+//    maven {
+//        name = "github-jannyboy11-invsee++-repo"
+//        url = "https://maven.pkg.github.com/Jannyboy11/InvSee-plus-plus"
+//    }
+    maven {
+        name = "jannyboy11-repsy"
+        url = "https://repo.repsy.io/mvn/jannyboy11/minecraft"
+    }
 }
 
 dependencies {
-compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+    compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+    implementation 'com.athaydes.rawhttp:rawhttp-core:2.6.0'
+    compileOnly 'com.janboerman.invsee:invsee-plus-plus_plugin:0.24.1-SNAPSHOT'
 }
 
 def targetJavaVersion = 17

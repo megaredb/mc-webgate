@@ -1,0 +1,4 @@
+port: 8008
+key: apikey
+money-model: 10077
+money-material: PAPER

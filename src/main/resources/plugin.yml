@@ -2,3 +2,7 @@ name: WebGate
 version: '${version}'
 main: com.megared.webgate.WebGate
 api-version: '1.20'
+libraries:
+  - com.athaydes.rawhttp:rawhttp-core:2.6.0
+depend:
+  - InvSeePlusPlus
