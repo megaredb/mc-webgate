@@ -1,0 +1,4 @@
+name: WebGate
+version: '${version}'
+main: com.megared.webgate.WebGate
+api-version: '1.20'
