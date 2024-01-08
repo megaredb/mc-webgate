@@ -32,7 +32,7 @@ public class OnlineRouter implements Router {
     @Override
     public Optional<RawHttpResponse<?>> route(RawHttpRequest request) {
         final JSONObject json = new JSONObject();
-        json.put("online", getOnlinePlayersCount());
+        json.put("count", getOnlinePlayersCount());
 
         return Optional.of(http.parseResponse("HTTP/1.1 200 OK\r\n" +
                         "Content-Type: application/json"

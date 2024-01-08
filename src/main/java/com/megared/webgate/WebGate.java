@@ -38,9 +38,11 @@ public final class WebGate extends JavaPlugin {
             new BukkitRunnable() {
                 @Override
                 public void run() {
-                    acceptConnection();
+                    while (!serverSocket.isClosed()) {
+                        acceptConnection();
+                    }
                 }
-            }.runTaskTimerAsynchronously(this, 20, 10);
+            }.runTaskAsynchronously(this);
         } catch (IOException e) {
             getLogger().severe("Error starting the web server: " + e.getMessage());
         }
@@ -48,6 +50,10 @@ public final class WebGate extends JavaPlugin {
 
     private void acceptConnection() {
         try {
+            if (serverSocket.isClosed()) {
+                return;
+            }
+
             Socket connectionSocket = serverSocket.accept();
             Thread connectionThread = new Thread(new Connection(connectionSocket, getConfig()));
             connectionThread.start();
