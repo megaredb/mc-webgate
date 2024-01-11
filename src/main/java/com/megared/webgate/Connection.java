@@ -1,8 +1,5 @@
 package com.megared.webgate;
-import com.megared.webgate.routers.MoneyRouter;
-import com.megared.webgate.routers.NotFoundRouter;
-import com.megared.webgate.routers.OnlineRouter;
-import com.megared.webgate.routers.Router;
+import com.megared.webgate.routers.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import rawhttp.core.RawHttp;
 import rawhttp.core.RawHttpRequest;
@@ -36,7 +33,8 @@ public class Connection  implements Runnable {
                         config.getInt("money-model"),
                         config.getString("money-material")
                 ),
-                new OnlineRouter()
+                new OnlineRouter(),
+                new WhitelistRouter()
         };
     }
 
